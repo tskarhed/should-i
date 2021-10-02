@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Yes or no?
+        </title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="description" property="og:description" content="Are you facing a low stake decision? Here is the solution for you?"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Question_Mark.svg/640px-Question_Mark.svg.png"/>
+        <style>
+            *::selection{
+                background: #123456;
+                color: white;
+            }
+
+            body {
+            font-family: system-ui, sans-serif;
+            text-align: center;
+            color: white;
+            background-color: #770082;
+            font-size: 3rem;
+            }
+
+            h1 {
+            font-weight: normal;
+            }
+
+            .hidden {
+            display: none;
+            }
+
+            #loading {
+            width: 4rem;
+            animation: rotation 1.5s infinite;
+            }
+
+            @keyframes rotation {
+            0% {
+                transform: rotateZ(0deg);
+            }
+            100% {
+                transform: rotateZ(360deg);
+            }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Should I do the thing?</h1>
+        <div aria-live="polite">
+            <object id="loading" type="image/svg+xml" data="./spinner-solid.svg" class="logo">Loading, please wait</object>
+            <p class="hidden yes">Yes.</p>
+            <p class="hidden no">No.</p>
+        </div>
+        <script>
+            function yesOrNo() {
+                return Math.random() < 0.95 ? "yes" : "no";
+            }
+
+            const loader = document.querySelector("#loading");
+
+            setTimeout(function (){
+                loader.classList.add("hidden");
+                const answerEl = document.querySelector(`.${yesOrNo()}`);
+                answerEl.classList.remove("hidden")
+            }, 4000)
+        </script>
+    </body>
+</html>
