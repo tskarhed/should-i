@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "index.js"
+    "build": "node index.js"
   },
   "author": "Tobias Skarhed",
   "license": "ISC",
