@@ -1,0 +1,14 @@
+{
+  "name": "should-i",
+  "version": "0.0.1",
+  "description": "Website template helping you decide stuff",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tobias Skarhed",
+  "license": "ISC",
+  "devDependencies": {
+    "mustache": "^4.2.0"
+  }
+}

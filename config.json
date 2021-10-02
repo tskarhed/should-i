@@ -1,0 +1,9 @@
+{
+    "question": "Should I do the thing?",
+    "title": "Yes or no?",
+    "background": "#770082",
+    "color": "white",
+    "description": "Are you facing a low stake decision? Here is the solution for you?",
+    "probability": "0.95",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Question_Mark.svg/640px-Question_Mark.svg.png"
+}
