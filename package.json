@@ -2,6 +2,7 @@
   "name": "should-i",
   "version": "0.0.1",
   "type": "module",
+  "repository": "https://github.com/tskarhed/should-i",
   "description": "Website template helping you decide stuff",
   "main": "index.js",
   "scripts": {
