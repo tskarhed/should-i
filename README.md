@@ -44,7 +44,7 @@ This will output an index.html
 
 ## Google Analytics
 
-If you don't want to save your Google Analytics tracking code in your repo, save it as an environement variable called `GA_TRACKING` on whatever machine you're building on.
+If you don't want to save your Google Analytics tracking code in your repo, save it as an environement variable called `GA_TRACKING` on whatever machine you're building on. It should be on the form `G-XXXXXXXXXX`.
 
 The tracking code will be public regardless, but why not add some extra precaution?
 
