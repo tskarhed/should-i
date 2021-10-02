@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            {{title}}
+        </title>
+        {{#GA_TRACKING}}
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{GA_TRACKING}}"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', '{{GA_TRACKING}}');
+        </script>
+        {{/GA_TRACKING}}
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="description" property="og:description" content="{{description}}"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:image" content="{{& image}}"/>
+        <style>
+            *::selection{
+                background: #123456;
+                color: white;
+            }
+
+            body {
+            font-family: system-ui, sans-serif;
+            text-align: center;
+            color: {{color}};
+            background-color: {{background}};
+            font-size: 3rem;
+            }
+
+            h1 {
+            font-weight: normal;
+            }
+
+            .hidden {
+            display: none;
+            }
+
+            #loading {
+            width: 4rem;
+            animation: rotation 1.5s infinite;
+            }
+
+            @keyframes rotation {
+            0% {
+                transform: rotateZ(0deg);
+            }
+            100% {
+                transform: rotateZ(360deg);
+            }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>{{question}}</h1>
+        <div aria-live="polite">
+            <object id="loading" type="image/svg+xml" data="./spinner-solid.svg" class="logo">Loading, please wait</object>
+            <p class="hidden yes">Yes.</p>
+            <p class="hidden no">No.</p>
+        </div>
+        <script>
+            function yesOrNo() {
+                return Math.random() < {{probability}} ? "yes" : "no";
+            }
+
+            const loader = document.querySelector("#loading");
+
+            setTimeout(function (){
+                loader.classList.add("hidden");
+                const answerEl = document.querySelector(`.${yesOrNo()}`);
+                answerEl.classList.remove("hidden")
+            }, 4000)
+        </script>
+    </body>
+</html>
