@@ -41,3 +41,9 @@ npm run build
 ```
 
 This will output an index.html
+
+## Credit
+
+Template by Tobias Skarhed
+
+[Spinner by FontAwesome](https://fontawesome.com/license)
